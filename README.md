@@ -1,70 +1,69 @@
-# Getting Started with Create React App
+## Fullstack Help Center
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Frontend
 
-## Available Scripts
+This is a Fullstack Help Center project that features a frontend built with React and a backend powered by Node.js and Express, connected to a MongoDB database. 
+The application allows users to search and display help articles or resources dynamically fetched from a MongoDB database.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **Dynamic Data Fetching**: Fetches help articles or resources from a MongoDB database.
+- **Search Functionality**: Users can search through the help articles by title.
+- **Responsive Design**: The frontend is designed to be responsive and user-friendly.
+- **Backend API**: Provides endpoints to manage help center data.
+- **MongoDB Integration**: Stores and retrieves help articles from a MongoDB database.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Frontend Overview
 
-### `npm test`
+The frontend is built using React. It includes components such as Header, SearchBar, MainContent, and Footer. The Card component is used to display each help article.
+Key Files:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    App.js: Main component that sets up the application structure.
+    App.css : Contains the styles for the App component to match the design.
+    MainContent.js: Renders a list of Card components.
+    MainContent.css : Contains the styles for the MainContent component to match the design.
+    SearchBar.js: Provides search functionality to filter articles.
+    SearchBar.css : Contains the styles for the SearchBar component to match the design.
+    card.js: Represents each individual help article.
+    card.css: Contains the styles for the Card component to match the design.
 
-### `npm run build`
+Install frontend dependencies: 
+ cd ../frontend
+ npx create-react-app . 
+ npm install dot env 
+ npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
+ npm install axios
+ 
+## Set up environment variables:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    Backend: Create a .env file in the backend/ directory with the following content:
+    MONGODB_URI=mongodb+srv://Ravi-Coding:my_password@cluster0.mongodb.net/helpcenter?retryWrites=true&w=majority
+    PORT=3008
+    helpcenter- db Name
+    
+    Frontend: Create a .env file in the frontend/ directory with the following content:
+    REACT_APP_API_URL=http://localhost:3008/cards
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running the Project
+   1. Start the backend server:
+      cd backend
+      nodemon server.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   2. Start the frontend server:
+      cd ../frontend
+      npm start
+   
+## View the application:
 
-### `npm run eject`
+    Frontend: Open http://localhost:3004 in browser.
+    Backend API: Runs on http://localhost:3008.
+    
+## API Endpoints
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+    I used Postman API testing tool to test the API endpoints:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GET /ping to check if the server is running.
+POST /cards to create a new card.
+GET /cards to get all cards.
+GET /cards/:title to get a specific card by title.
