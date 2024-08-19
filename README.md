@@ -1,4 +1,4 @@
-## Fullstack Help Center
+## Fullstack Help Center App (Future Skills)
 
 # Frontend
 
@@ -28,12 +28,12 @@ Key Files:
     card.js: Represents each individual help article.
     card.css: Contains the styles for the Card component to match the design.
 
-Install frontend dependencies: 
- cd ../frontend
- npx create-react-app . 
- npm install dot env 
- npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
- npm install axios
+## Install frontend dependencies: 
+    cd ../frontend
+    npx create-react-app . 
+    npm install dot env 
+    npm install @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons
+    npm install axios
  
 ## Set up environment variables:
 
@@ -46,24 +46,25 @@ Install frontend dependencies:
     REACT_APP_API_URL=http://localhost:3008/cards
 
 ## Running the Project
-   1. Start the backend server:
+    1. Start the backend server:
       cd backend
       nodemon server.js
 
-   2. Start the frontend server:
+    2. Start the frontend server:
       cd ../frontend
       npm start
    
 ## View the application:
 
     Frontend: Open http://localhost:3004 in browser.
+    
     Backend API: Runs on http://localhost:3008.
     
 ## API Endpoints
 
     I used Postman API testing tool to test the API endpoints:
 
-GET /ping to check if the server is running.
-POST /cards to create a new card.
-GET /cards to get all cards.
-GET /cards/:title to get a specific card by title.
+    GET /ping to check if the server is running.
+    POST /cards to create a new card.
+    GET /cards to get all cards.
+    GET /cards/:title to get a specific card by title.
